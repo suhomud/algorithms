@@ -1,4 +1,4 @@
-package week_1.dinamic_connectivity;
+package io.sukhomud.coursera.algorithms.weeks.first.dinamicconnectivity;
 
 /**
  * @author Yevhen Sukhomud
@@ -23,7 +23,6 @@ public class UF {
             }
         }
     }
-
 
     public boolean connected(int p, int q) {
         return id[p] == id[q];

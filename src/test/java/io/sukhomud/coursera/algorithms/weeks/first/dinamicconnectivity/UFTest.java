@@ -1,4 +1,4 @@
-package week_1.dinamic_connectivity;
+package io.sukhomud.coursera.algorithms.weeks.first.dinamicconnectivity;
 
 import org.junit.Test;
 
