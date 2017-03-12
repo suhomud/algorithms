@@ -1,18 +1,18 @@
-package io.sukhomud.coursera.algorithms.weeks.first.dinamicconnectivity;
+package io.sukhomud.coursera.algorithms.weeks.first;
 
 /**
  * @author Yevhen Sukhomud
  */
-public class UF {
+public class QuickUnionUF {
 
-    public int[] id;
+    private int[] id;
 
-    public UF(int n) {
+    public QuickUnionUF(int n) {
         id = new int[n];
-        for (int i = 0; i < id.length; i++) {
+        for (int i = 0; i < id.length; i++)
             id[i] = i;
-        }
     }
+
 
     public void union(int p, int q) {
         int from = id[p];
