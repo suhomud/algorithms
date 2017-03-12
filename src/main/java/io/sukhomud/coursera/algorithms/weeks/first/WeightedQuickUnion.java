@@ -3,21 +3,30 @@ package io.sukhomud.coursera.algorithms.weeks.first;
 /**
  * @author Yevhen Sukhomud
  */
-public class QuickUnionUF {
+public class WeightedQuickUnion {
 
     private int[] id;
+    private int[] sizes;
 
-    public QuickUnionUF(int n) {
+    public WeightedQuickUnion(int n) {
         id = new int[n];
-        for (int i = 0; i < id.length; i++) {
+        sizes = new int[n];
+        for (int i = 0; i < id.length; i++)
             id[i] = i;
-        }
     }
 
     public void union(int p, int q) {
         int pRoot = root(p);
         int qRoot = root(q);
-        id[pRoot] = qRoot;
+        if (pRoot != qRoot) {
+            if (sizes[pRoot] < sizes[qRoot]) {
+                id[pRoot] = qRoot;
+                sizes[qRoot] =+ sizes[pRoot];
+            } else {
+                id[qRoot] = pRoot;
+                sizes[pRoot] =+ sizes[qRoot];
+            }
+        }
     }
 
     public boolean connected(int p, int q) {

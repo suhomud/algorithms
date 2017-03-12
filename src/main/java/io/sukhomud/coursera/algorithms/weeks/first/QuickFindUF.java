@@ -9,26 +9,23 @@ public class QuickFindUF {
 
     public QuickFindUF(int n) {
         id = new int[n];
-        for (int i = 0; i < id.length; i++) {
+        for (int i = 0; i < id.length; i++)
             id[i] = i;
-        }
     }
 
+
     public void union(int p, int q) {
-        int pRoot = root(p);
-        int qRoot = root(q);
-        id[pRoot] = qRoot;
+        int from = id[p];
+        int to = id[q];
+        for (int i = 0; i < id.length; i++) {
+            if (id[i] == from) {
+                id[i] = to;
+            }
+        }
     }
 
     public boolean connected(int p, int q) {
-        return root(p) == root(q);
-    }
-
-    private int root(int i) {
-        while (id[i] != i) {
-            i = id[i];
-        }
-        return i;
+        return id[p] == id[q];
     }
 
 }

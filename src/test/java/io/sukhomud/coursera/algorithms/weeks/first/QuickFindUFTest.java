@@ -1,6 +1,5 @@
-package io.sukhomud.coursera.algorithms.weeks.first.dinamicconnectivity;
+package io.sukhomud.coursera.algorithms.weeks.first;
 
-import io.sukhomud.coursera.algorithms.weeks.first.QuickFindUF;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
